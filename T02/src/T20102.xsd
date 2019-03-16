@@ -1,0 +1,22 @@
+
+1.	Explain the problem that occurs when executing the recursive method f(0).
+public static int f(int n) {
+	if (n == 1)
+		return n;
+	else 
+		return n * f(n-1);
+}
+
+ANSWER : STACKOVERFLOW ERROR
+
+
+2.	Explain the problem that occurs when executing the recursive method f().
+public static int f(int n) {
+	if (n == 0)
+		return n;
+	else 
+		return f(n+1) + n;
+}
+
+ANSWER : STACK OVERFLOW ERROR
+
