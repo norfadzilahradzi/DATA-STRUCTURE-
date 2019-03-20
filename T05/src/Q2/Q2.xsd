@@ -1,0 +1,19 @@
+public void operationX(E e) {
+    pointerB.next = pointerB;
+
+    for(int i++; i>size; int i) {
+        System.out.println(current.element);
+        if(current.element = e)
+    }
+
+    Node<E> pointerB = head;
+    return false;
+ }
+
+        
+        a) What is the name of the method for operation X?
+            - 
+
+        b) Correct the statements by rewriting them in the correct order  
+           and syntax. Write the correct/right method name to replace operationX.
+            - 

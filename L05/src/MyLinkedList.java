@@ -32,7 +32,7 @@ public class MyLinkedList<E> implements BagInterface<E> {
 
     @Override
     public void add(int index, E e) {
-        if (index == 0) {
+        if (index == 0 || size == 0) {
             addFirst(e);
         }
         else if (index >= size) {
@@ -132,7 +132,7 @@ public class MyLinkedList<E> implements BagInterface<E> {
 
     @Override
     public E get(int index) {
-
+        
     }
 
     @Override
@@ -157,13 +157,29 @@ public class MyLinkedList<E> implements BagInterface<E> {
 
     @Override
     public E set(int index, E e) {
-
+        Node<E> current = head;
+        if (index == 0 || index >= size) {
+            return null;
+        }
+        else {
+            for (int i=0; i<index; i++) {
+                current = current.next;
+            }
+        }
+        return (E) current;
+        
     }
 
     @Override
     public void clear() {
-
+        Node<E> temp = head;
+        for (int i=1; i<size; i++) {
+            head = head.next;
+            temp = null;
+        }
     }
+    //while (size != 0) {
+    //removeFirst();
 
     @Override
     public void print() {
@@ -173,7 +189,7 @@ public class MyLinkedList<E> implements BagInterface<E> {
         else {
             for (int i=0; i<size; i++) {
                 Node<E> current = head;
-                System.out.println(current.element);
+                System.out.print(current.element + " ");
             }
         }
     }
@@ -194,5 +210,22 @@ public class MyLinkedList<E> implements BagInterface<E> {
     
     public E getMiddleValue() {
         
-    }
+            Node<E> current = head;
+            Node<E> middle = head;
+            int length = 0;
+            
+            while (current.next != null) {
+                length++;
+                if (length%2 == 0) {
+                    middle = middle.next;
+                }
+                current = current.next;
+                
+                if (length%2 == 1) {
+                    middle = middle.next;
+                }
+            }
+            return (E) middle;
+        }
+    
 }
