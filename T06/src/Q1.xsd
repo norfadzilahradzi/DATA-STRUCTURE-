@@ -1,0 +1,48 @@
+public E xyz(int index,E e) 
+{
+    Node<E> current=head;
+    Node<E> temp;
+        if(index<0)  return null;
+        else if(index>=size-1) {
+            this.addLast(e);
+            return null;
+        }
+        else if(index==0) {
+            temp=head;
+            head.element=e;
+            return temp.element;
+        }
+        else{
+            for (int i = 1; i < index; i++) {
+                current=current.next;
+            }
+            temp=current.next;
+            current.next.element=e;
+            return temp.element;
+        }
+}
+
+a) Based on the above source code, explain what the lines of code 
+           do from line 10 – 21
+           - 
+           
+b) What is the main purpose of the method xyz()?
+           - addMiddle
+           
+c) Modify above source code to make it concise and simpler
+           
+        if (index == 0) {
+            addFirst(e);
+        }
+        
+        else if (index >= size) {
+            addLast(e);
+        }
+        else {
+            Node<E> current = head;
+            for (int i=0; i<index; i++) {
+                current = current.next;
+            }
+            current.next = new Node<>(e);
+            current.next.next = temp;
+        }

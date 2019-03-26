@@ -12,5 +12,12 @@ public class Node<E> {
     public Node(E e) {
         element = e;
         next = null;
+        
+        
+        
     }
+    
+    
+
 }
+

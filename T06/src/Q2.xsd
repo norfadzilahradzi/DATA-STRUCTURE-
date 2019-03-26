@@ -1,0 +1,18 @@
+else{
+    Node<E> temp = head;
+    for(int i=0; i<index; i++){
+        temp = temp.next;
+    }
+    element = temp.element;
+    temp.next.prev = temp.prev;
+    temp.prev.next = temp.next;
+    temp.next = null;
+    temp.prev = null;
+    size--;
+    
+    Based on the source code above, assume the index given is 3.
+    
+    a) Explain what the lines of code do from line 2-11.
+    
+    
+    
