@@ -5,9 +5,12 @@ public class Node<E> {
 
     //DEFAULT CONSTRUCTOR
     public Node() {
+        element = null;
+        next = null;
     }
     
-    public Node(E o) {
-        element = o;
+    public Node(E e) {
+        element = e;
+        next = null;
     }
 }

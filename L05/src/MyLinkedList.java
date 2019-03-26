@@ -1,15 +1,18 @@
 
 public class MyLinkedList<E> implements BagInterface<E> {
     private int size;
-    Node<E> head = null;
-    Node<E> tail = null;
+    Node<E> head;
+    Node<E> tail;
 
     public MyLinkedList() {
+        head = null;
+        tail = null;
     }
 
     @Override
     public void addFirst(E e) {
         Node<E> newNode = new Node<>(e);
+        newNode.next = head;
         head = newNode;
         size++;
         
@@ -123,16 +126,24 @@ public class MyLinkedList<E> implements BagInterface<E> {
         Node<E> current = head;
         for (int i=0; i<size; i++) {
             if (current.element.equals(e)) {
+                current = current.next;
                 return true;
             }
-            current = current.next;
+           else
+                return false;
         }
-        return false;
     }
 
     @Override
     public E get(int index) {
-        
+        Node<E> current = head;
+        if (index < 0 || index >= size) {
+            return null;
+        }
+        for (int i=0; i<index; i++) {
+            current = current.next;
+        }
+        return current.element;
     }
 
     @Override
@@ -147,39 +158,69 @@ public class MyLinkedList<E> implements BagInterface<E> {
 
     @Override
     public int indexOf(E e) {
-
+        Node<E> current = head;
+        int index = 0;
+        if (size == 0) {
+            return -1;
+        }
+        if (current.element.equals(e)) {
+            return index;
+        }
+        for (int i=0; i<size-1; i++) {
+            current = current.next;
+            index++;
+            if (current.element.equals(e)) {
+                return index;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(E e) {
-
+        Node<E> current = head;
+        int index = 0, result = -1;
+        if (size == 0) {
+            return -1;
+        }
+        if (current.element.equals(e)) {
+            return index;
+        }
+        for (int i=0; i<size-1; i++) {
+            current = current.next;
+            index++;
+            if (current.element.equals(e)) {
+                result = index;
+            }
+        }
+        return result;
     }
 
     @Override
     public E set(int index, E e) {
         Node<E> current = head;
-        if (index == 0 || index >= size) {
+        if (index == 0) {
             return null;
         }
         else {
             for (int i=0; i<index; i++) {
                 current = current.next;
             }
+            E temp = tail.element;
+            current.element = e;
+            return temp;
         }
-        return (E) current;
         
     }
 
     @Override
     public void clear() {
-        Node<E> temp = head;
         for (int i=1; i<size; i++) {
-            head = head.next;
-            temp = null;
+            while (size != 0) {
+                removeFirst();
+            }
         }
     }
-    //while (size != 0) {
-    //removeFirst();
 
     @Override
     public void print() {
@@ -187,21 +228,32 @@ public class MyLinkedList<E> implements BagInterface<E> {
             System.out.println("The list is empty.");
         }
         else {
+            Node<E> current = head;
             for (int i=0; i<size; i++) {
-                Node<E> current = head;
                 System.out.print(current.element + " ");
+                current = current.next;
             }
         }
     }
 
     @Override
-    public void reverse() {
-        Node<E> current = head;
-        while (current != null) {
-            System.out.println(current.element);
-            current = current.next;
+    public E reverse() {
+        if (size == 0) {
+            System.out.println("Nothing to reverse.");
         }
-
+        else {
+          Node<E> current = head;
+          Node<E> prev = null;
+          Node<E> next = null;
+          
+          while (current != null) {
+              next = current.next;
+              current.next = prev;
+              prev = current;
+              current = next;
+          }
+          return (E) prev;
+        }
     }
     
     public int size() {
@@ -209,23 +261,13 @@ public class MyLinkedList<E> implements BagInterface<E> {
     }
     
     public E getMiddleValue() {
-        
-            Node<E> current = head;
-            Node<E> middle = head;
-            int length = 0;
-            
-            while (current.next != null) {
-                length++;
-                if (length%2 == 0) {
-                    middle = middle.next;
-                }
-                current = current.next;
-                
-                if (length%2 == 1) {
-                    middle = middle.next;
-                }
-            }
-            return (E) middle;
+        if (size == 0) {
+            return null;
         }
+        else {
+            int index = size / 2;
+            return this.get(index);
+        }
+    }
     
 }

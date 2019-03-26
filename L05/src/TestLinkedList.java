@@ -4,42 +4,48 @@ public class TestLinkedList<E> {
     public static void main(String[] args){
         
         MyLinkedList<String> list = new MyLinkedList<>();
+                
         list.add("a");
         list.add("b");
         list.add("c");
         list.add("d");
         list.add("e");
-        
-        System.out.println("All elements : ");
+               
+        System.out.print("All elements : ");
         list.print();
         
-        System.out.println("Reverse elements : ");
-        list.reverse();
+        System.out.println();
+        System.out.print("Reverse elements : ");
+//        list.reverse();
         
-        System.out.println("Size : ");
-        list.size();
+        System.out.println("\nSize : " + list.size());
         
-        System.out.println("First element : ");
-        list.getFirst();
+        System.out.println("First element : " + list.getFirst());
         
-        System.out.println("Last element : ");
-        list.getLast();
+        System.out.println("Last element : " + list.getLast());
         
-        System.out.println("Deleted : ");
+        System.out.println("\nAFTER ONE ELEMENT DELETED");
         list.remove(2); //DELETE THE MIDDLE VALUE
+        System.out.print("Elements left : ");
+        list.print();
+        System.out.println();
         
-        System.out.println("Location 2nd value : ");
-        list.get(1); //2nd
+        System.out.println("Location 2nd value : " + list.get(1));
+        System.out.println("Location 3rd value : " + list.get(2));
         
-        System.out.println("Location 3rd value : ");
-        list.get(2); //3rd
+//        System.out.println("Is the list has c ? " + list.contains("c"));
         
-        list.contains('c');
-        //CHECK IF THE LIST HAS VALUE 'C'
+//        list.clear();
+//        list.print();
         
+        list.set(0, "h");
+        list.set(1, "e");
+        list.set(2, "l");
+        list.set(3, "l");
+//        list.set(4, "o");
         
-        //REPLACE THE ITEMS WITH H,E,L,L,0
-        
+        list.print();
+        System.out.println();
         
     }
     

@@ -51,15 +51,15 @@ public interface BagInterface<T> {
      * 
      * @return 
      */
-    public String union();
+    public BagInterface<T> union(BagInterface<T> bag);
     
     /**
      * 
      * @return 
      */
-    public String intersection();
+    public BagInterface<T> intersection(BagInterface<T> bag);
     
-    public String difference();
+    public BagInterface<T> difference(BagInterface<T> bag);
     } // end BagInterface
 
         

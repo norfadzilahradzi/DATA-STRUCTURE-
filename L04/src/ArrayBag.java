@@ -33,32 +33,64 @@ public class ArrayBag<T> implements BagInterface<T> {
 
     @Override
     public boolean add(T newEntry) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (this.isFull()) {
+            return false;
+        }
+        bag[numberOfEntries++] = newEntry;
+        return true;
     }
 
     @Override
     public T remove() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (numberOfEntries > 0) {
+            return bag[--numberOfEntries];
+        }
+        return null;
     }
 
     @Override
     public boolean remove(T anEntry) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean found = false;
+        for (int i=0; i<numberOfEntries; i++) {
+            if (bag[i].equals(anEntry)){
+                found = true;
+                for (int j=i; j<numberOfEntries-1; j++) {
+                    bag[j] = bag[j+1];
+                }
+                numberOfEntries--;
+                break;
+            }
+        }
+        if (found) {
+            return true; }
+        return false;        
     }
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        bag = (T[]) new Object[DEFAULT_CAPACITY];
+        numberOfEntries = 0;
     }
 
     @Override
     public int getFrequencyOf(T anEntry) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int counter = 0;
+        for (int i=0; i<numberOfEntries; i++) {
+            if (bag[i].equals(anEntry)) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     @Override
     public boolean contains(T anEntry) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (T temp : bag) {
+            if (temp.equals(anEntry)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -73,17 +105,7 @@ public class ArrayBag<T> implements BagInterface<T> {
         for (int i=0; i<numberOfEntries; i++) {
             newBag.add((String) this.toArray()[i]);
         }
-    } 
-
-//    @Override
-//    public String intersection() {
-//        BagInterface<String> commonItems = bag1.intersection(bag2);
-//    }
-//
-//    @Override
-//    public String difference() {
-//        
-//    }
+    }
 
     @Override
     public String intersection() {
