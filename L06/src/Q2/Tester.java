@@ -56,7 +56,7 @@ public class Tester<E> {
         System.out.println("\nThe updated students list is : ");
         list.printList();
         
-        System.out.println("\nAll student data captured complete. Thank you!");
+        System.out.println("\n\nAll student data captured complete. Thank you!");
     }
     
 }
