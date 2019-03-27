@@ -14,8 +14,7 @@ public class TestLinkedList<E> {
         System.out.print("All elements : ");
         list.print();
         
-        System.out.println();
-        System.out.print("Reverse elements : ");
+//        System.out.print("\nReverse elements : ");
 //        list.reverse();
         
         System.out.println("\nSize : " + list.size());
@@ -33,8 +32,8 @@ public class TestLinkedList<E> {
         System.out.println("Location 2nd value : " + list.get(1));
         System.out.println("Location 3rd value : " + list.get(2));
         
-//        System.out.println("Is the list has c ? " + list.contains("c"));
-        
+        System.out.println("Is the list has c ? " + list.contains("c"));
+
 //        list.clear();
 //        list.print();
         

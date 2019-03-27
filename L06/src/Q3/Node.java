@@ -6,14 +6,14 @@ public class Node<E> {
     Node<E> next;
     Node<E> prev;
 
-    public Node(E element, Node<E> next, Node<E> prev) {
-        this.element = element;
+    public Node(E e, Node<E> next, Node<E> prev) {
+        this.element = e;
         this.next = next;
         this.prev = prev;
     }
 
-    public Node(E element) {
-        this(element, null, null);
+    public Node(E e) {
+        this(e, null, null);
     }
     
     

@@ -35,13 +35,12 @@ public class Tester<E> {
                 System.out.println("\nEnter the new name : ");
                 String newName = s.next();
                 list.replace(name, newName);
+                System.out.println("\nThe new student list is : ");
+                list.printList();
             }
         }
-        
-        System.out.println("\nThe new student list is : ");
-        list.printList();
-        
-        System.out.println("\n\nDo you want to remove any of your student name? Enter 'y' for yes, 'n' to proceed.");
+                
+        System.out.println("\nDo you want to remove any of your student name? Enter 'y' for yes, 'n' to proceed.");
         String yesno = s.next();
         char decide = yesno.charAt(0);
         if (decide == 'y' || decide == 'Y') {

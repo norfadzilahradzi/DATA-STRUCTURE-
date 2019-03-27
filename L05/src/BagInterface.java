@@ -83,5 +83,5 @@ public interface BagInterface<E> {
     /**
      * Print all elements in reverse order.
      */
-    public E reverse();
+//    public E reverse();
 }

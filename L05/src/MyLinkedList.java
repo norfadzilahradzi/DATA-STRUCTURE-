@@ -124,14 +124,17 @@ public class MyLinkedList<E> implements BagInterface<E> {
     @Override
     public boolean contains(E e) {
         Node<E> current = head;
-        for (int i=0; i<size; i++) {
+        boolean wtv = false;
+        for (int i=1; i<size; i++) {
+            current = current.next;
             if (current.element.equals(e)) {
-                current = current.next;
-                return true;
+                wtv = true;
             }
-           else
-                return false;
+            else {
+                wtv = false;
+            }
         }
+        return wtv;
     }
 
     @Override
@@ -236,25 +239,25 @@ public class MyLinkedList<E> implements BagInterface<E> {
         }
     }
 
-    @Override
-    public E reverse() {
-        if (size == 0) {
-            System.out.println("Nothing to reverse.");
-        }
-        else {
-          Node<E> current = head;
-          Node<E> prev = null;
-          Node<E> next = null;
-          
-          while (current != null) {
-              next = current.next;
-              current.next = prev;
-              prev = current;
-              current = next;
-          }
-          return (E) prev;
-        }
-    }
+//    @Override
+//    public E reverse() {
+//        if (size == 0) {
+//            System.out.println("Nothing to reverse.");
+//        }
+//        else {
+//          Node<E> current = head;
+//          Node<E> prev = null;
+//          Node<E> next = null;
+//          
+//          while (current != null) {
+//              next = current.next;
+//              current.next = prev;
+//              prev = current;
+//              current = next;
+//          }
+//          return (E) prev;
+//        }
+//    }
     
     public int size() {
         return size;

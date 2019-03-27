@@ -45,7 +45,7 @@ public class MyLinkedList<E> {
         }
         else {
             Node<E> current = head;
-            for (int i=0; i<size; i++) {
+            for (int i=1; i<size; i++) {
                 System.out.print(current.element + " ");
                 current = current.next;
             }
