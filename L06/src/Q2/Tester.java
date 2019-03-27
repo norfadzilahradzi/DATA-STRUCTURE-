@@ -14,22 +14,50 @@ public class Tester<E> {
         String name;
         do {
             name = s.next();
-            list.add(name);
-            
-            
+            if (!(name.equals("n"))) {
+                list.add(name);
+            }
         } while (!(name.equals("n")));
         
         System.out.println("\nYou have entered the following students' name : ");
-        System.out.println("\nThe number of students entered is : ");
+        list.printList();
+        
+        System.out.println("\n\nThe number of students entered is : ");
+        System.out.println(list.getSize());
+        
         System.out.println("\nAll the names entered are correct? Enter 'r' to rename the student name, 'n' to proceed.");
-        System.out.println("\nEnter the existing student name that you want to rename : ");
-        System.out.println("\nEnter the new name : ");
+        String rename = s.next();
+        char next = rename.charAt(0);
+        if (next == 'r' || next == 'R') {
+            System.out.println("\nEnter the existing student name that you want to rename : ");
+            String wantRename = s.next();
+            if (list.contains(wantRename)) {
+                System.out.println("\nEnter the new name : ");
+                String newName = s.next();
+                list.replace(name, newName);
+            }
+        }
+        
         System.out.println("\nThe new student list is : ");
-        System.out.println("\nDo you want to remove any of your student name? Enter 'y' for yes, 'n' to proceed.");
-        System.out.println("\nEnter a student to remove : ");
+        list.printList();
+        
+        System.out.println("\n\nDo you want to remove any of your student name? Enter 'y' for yes, 'n' to proceed.");
+        String yesno = s.next();
+        char decide = yesno.charAt(0);
+        if (decide == 'y' || decide == 'Y') {
+            System.out.println("\nEnter a student to remove : ");
+            String remove = s.next();
+            list.removeElement(remove);
+        }
+                        
         System.out.println("\nThe number of updated student is : ");
+        System.out.println(list.getSize());
+        
         System.out.println("\nThe updated students list is : ");
+        list.printList();
+        
         System.out.println("\nAll student data captured complete. Thank you!");
     }
     
 }
+

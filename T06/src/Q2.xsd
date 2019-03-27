@@ -13,6 +13,9 @@ else{
     Based on the source code above, assume the index given is 3.
     
     a) Explain what the lines of code do from line 2-11.
+        - Moving the node in doubly linked list
+        - Removing the node at the given index
+        - Assign.....
     
     
     

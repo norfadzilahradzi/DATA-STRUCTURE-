@@ -1,5 +1,5 @@
 
-package SList<E>;
+package SList;
 
 public class SList<E> {
     private SNode<E> head;
@@ -40,14 +40,17 @@ public class SList<E> {
     
     public boolean contains(E e) {
         SNode<E> current = head;
-        for (int i=0; i<size; i++) {
+        boolean wtv = false;
+        for (int i=1; i<size; i++) {
             if (current.element.equals(e)) {
-                current = current.next;
-                return true;
+                wtv = true;
+                break;
             }
-           else
-                return false;
+            else {
+                wtv = false;
+            }
         }
+        return wtv;
     }
     
     public void clear() {

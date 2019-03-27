@@ -15,7 +15,7 @@ public class TestSList<E> {
         System.out.println("\n\nRemoved : " + list.removeInitial());
         System.out.print("After : ");
         list.display();
-//        list.contains("difficult");
+        System.out.println("KK" + list.contains("difficult"));
         list.clear();
     }
     
