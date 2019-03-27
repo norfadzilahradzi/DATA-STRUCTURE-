@@ -12,6 +12,38 @@ public class DoubleLinkedList<E> {
         this.tail = null;
     }
     
+    public void addFirst() {
+        
+    }
+    
+    public void addLast() {
+        
+    }
+    
+    public void add() {
+        
+    }
+    
+    public void remove() {
+        
+    }
+    
+    public void forward() {
+        
+    }
+    
+    public void backward() {
+        
+    }
+    
+    public void printSize() {
+        
+    }
+    
+    public void clear() {
+        
+    }
+    
     
     
     
