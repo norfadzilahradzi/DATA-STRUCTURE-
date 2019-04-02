@@ -70,7 +70,7 @@ public class DoubleLinkedList<E> {
         head = head.next;
         head.prev = null;
         size--;
-//        System.out.println("deleted: " + temp.element);
+        System.out.println("deleted: " + temp.element);
         return temp.element;
     }
     
@@ -82,7 +82,7 @@ public class DoubleLinkedList<E> {
         tail = tail.prev;
         tail.next = null;
         size--;
-//        System.out.println("deleted: " + temp.element);
+        System.out.println("deleted: " + temp.element);
         return temp.element;
     }
     
@@ -113,6 +113,7 @@ public class DoubleLinkedList<E> {
     }
     
     public void tranverseForward() {
+        System.out.println("iterating forward..");
         Node<E> temp = head;
         while (temp != null) {
             System.out.print(temp.element + " ");
@@ -121,6 +122,7 @@ public class DoubleLinkedList<E> {
     }
     
     public void tranverseBackward() {
+        System.out.println("iterating backward..");
         Node<E> temp = tail;
         while (temp != null) {
             System.out.print(temp.element + " ");
@@ -128,16 +130,12 @@ public class DoubleLinkedList<E> {
         }
     }
     
-    public void printSize() {
+    public int printSize() {
         if (size == 0) {
-            System.out.println("The list is empty.");
+            return 0;
         }
         else {
-            Node<E> current = head;
-            for (int i=1; i<size; i++) {
-                System.out.print(current.element + " ");
-                current = current.next;
-            }
+            return size;
         }
     }
     
