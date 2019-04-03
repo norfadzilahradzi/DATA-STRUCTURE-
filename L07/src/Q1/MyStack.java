@@ -31,6 +31,18 @@ public class MyStack<E> {
     }
     
     public boolean search (E e) {
+        boolean check = true;
         
+        for (int i=0; i<getSize(); i++) {
+            if (!(peek().equals(e))) {
+                check = false;
+                pop();
+            }
+            else {
+                check = true;
+                break;
+            }
+        }
+        return check;
     }
 }

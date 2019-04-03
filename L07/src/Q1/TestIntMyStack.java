@@ -20,6 +20,12 @@ public class TestIntMyStack {
         }
         System.out.println(stack.toString());
         System.out.println("Stack size : " + stack.getSize());
+        
+        System.out.println();
+        for (int i=0; i<total; i++) {
+            stack.pop();
+            System.out.println(stack.toString());
+        }
     }
-}
+}                                                                               
 

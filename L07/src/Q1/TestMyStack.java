@@ -12,14 +12,15 @@ public class TestMyStack {
         stack.push('b');
         stack.push('c');
         System.out.println(stack.toString());
-        stack.search('b');
-        stack.search('k');
+        System.out.println(stack.search('b'));
+        System.out.println(stack.search('k'));
         
+        System.out.println();
         addStack.push(1);
         addStack.push(2);
         addStack.push(3);
         System.out.println(addStack.toString());
-        addStack.search(6);
+        System.out.println(stack.search('6'));
                 
     }
 }
