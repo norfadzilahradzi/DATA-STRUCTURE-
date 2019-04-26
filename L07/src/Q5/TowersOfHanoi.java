@@ -5,10 +5,9 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class TowersOfHanoi  {
-    
     public static int N;
-     /* Creating Stack array  */
-     public static Stack<Integer>[] tower = new Stack[4]; 
+    
+    public static Stack<Integer>[] tower = new Stack[4]; 
  
      public static void main(String[] args)
      {
@@ -20,13 +19,13 @@ public class TowersOfHanoi  {
          System.out.println("Enter number of disks");
          int num = scan.nextInt();
          N = num;
-         toh(num);
+         push(num);
      }
      /* Function to push disks into stack */
-     public static void toh(int n)
+     public static void push(int n)
      {
-         for (int d = n; d > 0; d--)
-             tower[1].push(d);
+         for (int i = n; i > 0; i--)
+             tower[1].push(i);
          display();
          move(n, 1, 2, 3);         
      }
