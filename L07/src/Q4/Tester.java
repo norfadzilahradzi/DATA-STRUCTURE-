@@ -18,7 +18,6 @@ public class Tester {
             input = s.next();
         }
         
-        
         for (int i = 0; i < input.length(); i++) {
             stack.push(input.charAt(i));
         }
