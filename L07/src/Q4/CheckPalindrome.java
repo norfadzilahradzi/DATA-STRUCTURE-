@@ -22,6 +22,17 @@ public class CheckPalindrome<E> {
         return e;
     }
     
+    public boolean isEmpty() {
+        boolean ans = true;
+        if (list.isEmpty() == true) {
+            ans = true;
+        }
+        else {
+            ans = false;
+        }
+        return ans;
+    }
+    
     public String toString() {
         return "total";
     }
