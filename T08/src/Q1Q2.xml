@@ -1,0 +1,16 @@
+1. 4 everyday examples of queue
+-  A single-lane one-way road, where the vehicle that enters first, exits first
+-  Queue of people at any service point such as ticketing
+-  When you call a service centre and they told to wait as all support people are busy
+-  Queue of packets in data communication
+
+2. Difference between queue and stack
+ 
+ QUEUE
+ - First in first out (FIFO)
+ - Queue operations are called enqueue and dequeue
+ - Objects are inserted and removed from different ends
+ STACK
+ - Last in first out (LIFO)
+ - Stack operations are called push and pop
+ - Objects are inserted and removed at the same end
